@@ -20,17 +20,17 @@ After outlining the general overview, we analyze the weaknesses of the trust mod
 First, we start with the cold start problem in the [Static Initial Trust Section](https://github.com/stratosphereips/fides/blob/design_docs/doc/design.md#static-initial-trust), 
 which describes how peers
 can gain trust when they are new in the network and how Fides tackles this
-issue. Then, In the [Attack Vectors Section](https://github.com/stratosphereips/fides/blob/design_docs/doc/design.md#33-attack-vectors) 
+issue. Then, In the [Attack Vectors Section](https://github.com/stratosphereips/fides/blob/design_docs/doc/design.md_st**k(i,j)_attack-vectors) 
 we analyze possible attack vectors on our trust
 model.
 Once all trust model requirements are explained, we dive deep into Fides’s
-computational model in the [Computational Model of Fides Section](https://github.com/stratosphereips/fides/blob/design_docs/doc/design.md#35-computational-model-of-fides) 
+computational model in the [Computational Model of Fides Section](https://github.com/stratosphereips/fides/blob/design_docs/doc/design.md_st**k(i,j)_computational-model-of-fides) 
 and explain how it can uncover
 trust relationships in the network. 
 
 Because Fides specializes in sharing threat intelligence and integrates with
 [Slips IPS](https://github.com/stratosphereips/StratosphereLinuxIPS), 
-in the [Network Intelligence Aggregation Section](https://github.com/stratosphereips/fides/blob/design_docs/doc/design.md#37-network-intelligence-aggregation) 
+in the [Network Intelligence Aggregation Section](https://github.com/stratosphereips/fides/blob/design_docs/doc/design.md_st**k(i,j)_network-intelligence-aggregation) 
 we explain how Fides aggregates the weighted threat intelligence from the network.
 
 We use the following terminology to talk about the
@@ -50,7 +50,7 @@ P2P network. In equations, we use j when referring to the remote peer.
 * Service Trust: How much does Fides trust a remote peer that it
 provides the local peer with good service. In other words, to what
 extent does Fides trust a specific peer that it provides correct and
-valuable threat intelligence. We denote it st and discuss it in detail in [the Service Trust section](https://github.com/stratosphereips/fides/blob/design_docs/doc/design.md#351-service-trust)
+valuable threat intelligence. We denote it st and discuss it in detail in [the Service Trust section](https://github.com/stratosphereips/fides/blob/design_docs/doc/design.md_st**k(i,j)_service-trust)
 
 
 
@@ -70,7 +70,7 @@ In the second phase, Fides aggregates the threat intelligence data using
 the trust data it has for each remote peer. In general, data from highly
 trusted peers have a higher impact on the final aggregated threat intelligence
 than the data from peers with low trust. How does Fides does that is described
-in the  [Network Intelligence Aggregation Section](https://github.com/stratosphereips/fides/blob/design_docs/doc/design.md#37-network-intelligence-aggregation)
+in the  [Network Intelligence Aggregation Section](https://github.com/stratosphereips/fides/blob/design_docs/doc/design.md_st**k(i,j)_network-intelligence-aggregation)
 The aggregated threat intelligence is also sent to Slips IPS
 as an output of the trust model.
 
@@ -87,7 +87,7 @@ In the fourth step, Fides updates the trust data for each peer according
 to the satisfaction that is computed in step number three. 
 
 Computations
-that allow Fides to do that are described in detail in the [Computational Model of Fides Section](https://github.com/stratosphereips/fides/blob/design_docs/doc/design.md#35-computational-model-of-fides)
+that allow Fides to do that are described in detail in the [Computational Model of Fides Section](https://github.com/stratosphereips/fides/blob/design_docs/doc/design.md_st**k(i,j)_computational-model-of-fides)
 
 All operations, including the data flow and the communication with
 other peers and Slips, can be found on the operational diagram shown in
@@ -147,7 +147,7 @@ Static initial trust is supported by Fides as a form of fallback when no
 other cold start technique is used. The administrator provides a configuration
 that contains the initial reputation for each new peer.
 
-### 3.2.2 Pre-Trusted Peers
+### Pre-Trusted Peers
 
 
 Fedis is done as a part of a master thesis which was done simultaneously to the master 
@@ -191,7 +191,7 @@ of Slips. However, as the administrator needs to know the identity of the
 peers or organization, it does not solve the cold start problem globally for
 all peers.
 
-### 3.2.3 Recommendations
+### Recommendations
 
 As the local peer might have multiple remote peers that it trusts enough,
 Fides uses these relationships to ask the remote peers about how much they
@@ -214,14 +214,14 @@ enough trusted remote peers, otherwise, it can expose itself to bad-mouthing
 and unfair praises attacks more easily.
 Fides employs recommendation systems based on [SORT](https://ieeexplore.ieee.org/document/6280552) 
 but with more strict rules when it is actually used and combines it with the
-[pretrusted peers](https://github.com/stratosphereips/fides/blob/design_docs/doc/design.md#322-pre-trusted-peers)  
+[pretrusted peers](https://github.com/stratosphereips/fides/blob/design_docs/doc/design.md_st**k(i,j)_pre-trusted-peers)  
 as well as with the [static initial trust ](https://github.com/stratosphereips/fides/blob/design_docs/doc/design.md#static-initial-trust) 
 as a fallback when no other option is available due to constraints such as having not
 enough trusted peers. The algorithm used for the recommendation system
-is explained in detail in [Computational Model of Fides Section](https://github.com/stratosphereips/fides/blob/design_docs/doc/design.md#35-computational-model-of-fides)
+is explained in detail in [Computational Model of Fides Section](https://github.com/stratosphereips/fides/blob/design_docs/doc/design.md_st**k(i,j)_computational-model-of-fides)
 
 
-## 3.3 Attack Vectors
+## Attack Vectors
 
 Since Fides is a trust model that computes how much to trust peers, it
 is potentially open to attacks from adversarial peers. Adversarial peers are
@@ -234,7 +234,7 @@ Adversarial peers can try to:
 * Lie about a peer that is malicious
 
 
-## 3.5 Computational Model of Fides
+## Computational Model of Fides
 
 This section describes how Fides determines to whom and how much it
 can trust other remote peers. Our trust model expresses trust in a specif
@@ -267,7 +267,7 @@ sections.
 
 
 
-### 3.5.1 Service Trust
+### Service Trust
 
 As outlined previously, service trust is a value that describes how
 much peer i trusts that remote peer j will provide a good service.
@@ -286,7 +286,7 @@ the peer i.
 ![Screenshot_20240404_011815](https://github.com/stratosphereips/fides/assets/41242896/68bfcc53-ae16-40dd-9905-0a71b28e0237)
 
 
-### 3.5.2 Local Experience for Service Trust
+### Local Experience for Service Trust
 
 The first part of the Equation 3.1 contains competence belief _cb(i,j)_ , and
 integrity belief _ib(i,j)_ . Both values are based solely on the history of the
@@ -299,8 +299,6 @@ with the past interactions. We measure it as an average of interactions from
 the past.
 
 ![Screenshot_20240404_011933](https://github.com/stratosphereips/fides/assets/41242896/01272308-b4e9-4ed3-a7a7-eb5a5bb51c9e)
-
-
 
 **Integrity Belief**
 
@@ -316,9 +314,9 @@ lower the _ib(i,j)_ is. Consistency is a highly desired property as the local pe
 then has more precise estimates about the future behavior of the remote
 peer.
 
-### 3.5.3 Interaction Satisfaction
+### Interaction Satisfaction
 _s**k(i,j)_ is _i_’s satisfaction value with interaction with peer j in window k.
-(see the table [here](https://github.com/stratosphereips/fides/blob/design_docs/doc/design.md#35-computational-model-of-fides))
+(see the table [here](https://github.com/stratosphereips/fides/blob/design_docs/doc/design.md_st**k(i,j)_computational-model-of-fides))
 
 
 We outlined before, that each interaction between two peers is evaluated,
@@ -352,8 +350,6 @@ linear function
 
 ![Screenshot_20240404_012153](https://github.com/stratosphereips/fides/assets/41242896/afe31108-d95a-4103-b647-5291d979e578)
 
-
-
 However, in our case and after
 multiple iterations, we decided not to forget the interactions that the model
 remembers and rather have all interactions with the same impact.
@@ -364,7 +360,7 @@ remembers and rather have all interactions with the same impact.
 The way Fides computes  _f**k(i,j)_ might be changed in the future and implemented as a
 function of time, we discuss this in more detail as a part of the future work.
 
-### 3.5.4 Reputation and Recommendations
+### Reputation and Recommendations
 
 In order to mitigate the cold start problem outlined in the [Cold Start Problem Section](https://github.com/stratosphereips/fides/blob/design_docs/doc/design.md#cold-start-problem)
 and in the cases when there are no or few interactions between i and j, the
@@ -395,7 +391,7 @@ which the peer-to-peer network of IPS definitely is, we do not want to get
 recommendations from peers, that have low trust at all. Moreover, given
 the nature of Slips, we decided to combine a recommendation system based
 on SORT with [ Static Initial Trust](https://github.com/stratosphereips/fides/blob/design_docs/doc/design.md#static-initial-trust)
-and with [Pre-trusted peers](https://github.com/stratosphereips/fides/blob/design_docs/doc/design.md#322-pre-trusted-peers).
+and with [Pre-trusted peers](https://github.com/stratosphereips/fides/blob/design_docs/doc/design.md_st**k(i,j)_pre-trusted-peers).
 This approach provides a more robust basis for a trust-sensitive environment
 and it helps us to mitigate the [Cold Start Problem](https://github.com/stratosphereips/fides/blob/design_docs/doc/design.md#cold-start-problem)
 If the peer is part of a pre-trusted organization or it is pre-trusted itself,
@@ -471,7 +467,7 @@ Again, we are weighing local experience to remote experience. However, in
 this case, it is local for the remote peers that provided the recommendations.
 
 
-### 3.5.5 Remote Local Experience
+### Remote Local Experience
 
 Similarly, when we compute the service trust in Equation 3.1, we need
 to get competence and integrity belief. However, while creating reputation
@@ -501,9 +497,9 @@ This means that normalization coefficient βeib = βecb.
 
 ![Screenshot_20240404_012741](https://github.com/stratosphereips/fides/assets/41242896/3dc70de0-0010-4e4c-a0f3-52a35f89a258)
 
-### 3.5.6 Remote Remote Experience
+### Remote Remote Experience
 
-Going back to Equation 3.5 from the [Reputation and Recommendations Section](https://github.com/stratosphereips/fides/blob/design_docs/doc/design.md#354-reputation-and-recommendations),
+Going back to Equation 3.5 from the [Reputation and Recommendations Section](https://github.com/stratosphereips/fides/blob/design_docs/doc/design.md_st**k(i,j)_reputation-and-recommendations),
 we use estimated reputation value _er(i,j)_ . This value represents information that was created
 
 by the peers that are remote even for remote peer j. In other words, this
@@ -513,7 +509,7 @@ acquaintance.
 ![Screenshot_20240404_012914](https://github.com/stratosphereips/fides/assets/41242896/13c29d1b-015e-43b1-b78b-041be600e904)
 
 
-### 3.5.7 Recommendation Trust Metric
+### Recommendation Trust Metric
 
 Recommendation trust - _rt(i,z)_ - is another metric that a peer calculates
 and stores. It expresses how much does i trust that z provides good recommendations.
@@ -538,7 +534,7 @@ Similarly for interactions, we use three different parameters for calculating
 the _rcb(i,z)_ and _rib(i,z)_ . We use satisfaction _rs**x(i,z)_ , weight _rw**x(i,z)_ and the
 fading effect _rf**x(i,z)_. The parameters have the same background as described
 in the 
-[Interaction Satisfaction Section](https://github.com/stratosphereips/fides/blob/design_docs/doc/design.md#353-interaction-satisfaction), but in this case, they are connected to recommendations
+[Interaction Satisfaction Section](https://github.com/stratosphereips/fides/blob/design_docs/doc/design.md_st**k(i,j)_interaction-satisfaction), but in this case, they are connected to recommendations
 instead of service. We calculate _rcb(i,z)_ as follows:
 
 ![Screenshot_20240404_013050](https://github.com/stratosphereips/fides/assets/41242896/bd43ca56-9c88-43f8-b81b-57a72df7c5eb)
@@ -554,7 +550,7 @@ behavior in recommendations - _rcb(i,z)_ - and then the deviation from such
 behavior - _rib(i,z)_ 
 
 Fading effect _rf**x(i,z)_ has similar properties as the fading effect for service
-trust described in [the Interaction Satisfaction Section](https://github.com/stratosphereips/fides/blob/design_docs/doc/design.md#353-interaction-satisfaction).
+trust described in [the Interaction Satisfaction Section](https://github.com/stratosphereips/fides/blob/design_docs/doc/design.md_st**k(i,j)_interaction-satisfaction).
 It is a non-increasing function of a number
 of recommendations or a time. For the recommendations, Fides implements
 it exactly the same as for the service interactions.
@@ -565,7 +561,7 @@ it exactly the same as for the service interactions.
 
 **Evaluating Received Recommendation** 
 
-As outlined in [Recommendation Trust Metric Section](https://github.com/stratosphereips/fides/blob/design_docs/doc/design.md#357-recommendation-trust-metric), 
+As outlined in [Recommendation Trust Metric Section](https://github.com/stratosphereips/fides/blob/design_docs/doc/design.md_st**k(i,j)_recommendation-trust-metric), 
 in order to evaluate a particular recommendation from remote peer z, 
 we have satisfaction, weight, and the fading
 effect. We calculate the recommendation satisfaction _rs**x(i,z)_ by comparing
@@ -587,7 +583,7 @@ peers.
 ![Screenshot_20240404_013339](https://github.com/stratosphereips/fides/assets/41242896/ee01149b-155f-48a8-8a88-67b448ac6841)
 
 
-## 3.7 Network Intelligence Aggregation
+## Network Intelligence Aggregation
 
 Fides is a trust model designed for global peer-to-peer networks of Slips
 instances. It is designed to support Slips in detecting malicious actors on
@@ -616,7 +612,7 @@ We designed and implemented two different functions for aggregating
 threat intelligence and computing _S**k(T)_ alongside with _C**k(T)_ . Both of them
 are implemented in Fides under their respective names.
 
-### 3.7.1 AverageConfidenceTIAggregation
+### AverageConfidenceTIAggregation
 In this method, the aggregated score _S**k(T)_ is the sum of _S**k(j,T)_ which is the
 score sent by each peer j about target T in time window k; weighed with
 the normalized service trust that i computed for peer j, denoted _wst**k(i,j)_ . The
@@ -645,10 +641,10 @@ window k, of the weighted confidence sent by peer j on target T on time
 window k. The weight is done by the service trust that i has on j on time
 window k.
 
-### 3.7.2 WeightedAverageConfidenceTIAggregation
+### WeightedAverageConfidenceTIAggregation
 
 This strategy uses Equation 3.22 to compute the aggregated score _S**k(T)_
-similarly to the [AverageConfidenceTIAggregation](https://github.com/stratosphereips/fides/blob/design_docs/doc/design.md#371-averageconfidencetiaggregation).
+similarly to the [AverageConfidenceTIAggregation](https://github.com/stratosphereips/fides/blob/design_docs/doc/design.md_st**k(i,j)_averageconfidencetiaggregation).
 However, the way how this strategy calculates _C**k(T)_ is different. Instead of using
 the service trust _st**k(i,j)_ to determine the correct trust in the confidence _C**k(j,T)_ 
 submitted by peer j and then diving it by the number of peers, it uses
