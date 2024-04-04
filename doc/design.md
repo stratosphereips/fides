@@ -12,8 +12,7 @@ and extensions that allows it to work in highly adversarial global peer-to-
 peer networks effectively. Fides is a generic and heavily configurable trust
 model specializing in sharing threat intelligence. Thanks to its modular
 architecture, it can operate with any data and it is not limited only to threat
-intelligence. In [This section](https://github.com/stratosphereips/fides/blob/design_docs/doc/design.md#general-overview-of-fides) 
-we describe our trust model design and explain
+intelligence. In the [General Overview of Fides Section](https://github.com/stratosphereips/fides/blob/design_docs/doc/design.md#general-overview-of-fides) we describe our trust model design and explain
 how Fides works on a high level, the inputs and outputs, and how it behaves
 in which situation. 
 
@@ -367,7 +366,7 @@ function of time, we discuss this in more detail as a part of the future work.
 
 ### 3.5.4 Reputation and Recommendations
 
-In order to mitigate the cold start problem outlined in the [Cold Start Problem Section ](https://github.com/stratosphereips/fides/blob/design_docs/doc/design.md#cold-start-problem)
+In order to mitigate the cold start problem outlined in the [Cold Start Problem Section](https://github.com/stratosphereips/fides/blob/design_docs/doc/design.md#cold-start-problem)
 and in the cases when there are no or few interactions between i and j, the
 algorithm relies on _r(i,j)_ - reputation value. _r(i,j)_  is the second part of the
 service trust Equation 3.1 that introduces remote experience to the service
@@ -504,8 +503,8 @@ This means that normalization coefficient βeib = βecb.
 
 ### 3.5.6 Remote Remote Experience
 
-Going back to Equation 3.5 from Section 3.5.4, we use estimated reputation value
-- _er(i,j)_  . This value represents information that was created
+Going back to Equation 3.5 from the [Reputation and Recommendations Section](https://github.com/stratosphereips/fides/blob/design_docs/doc/design.md#354-reputation-and-recommendations),
+we use estimated reputation value _er(i,j)_ . This value represents information that was created
 
 by the peers that are remote even for remote peer j. In other words, this
 information came from the second ring of trust - from acquaintances of an
