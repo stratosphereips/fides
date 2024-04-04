@@ -264,7 +264,8 @@ with peer i, for i it is a remote experience.
 Table 3.1 below describes the most important notation we use in the following
 sections.
 
-![Screenshot_20240404_011733](https://github.com/stratosphereips/fides/assets/41242896/7b543bee-2a80-483a-a79d-cfe7a991d94d)
+![Screenshot_20240404_231640](https://github.com/stratosphereips/fides/assets/41242896/d816cf32-49f7-4a93-ad59-4c596594f8a9)
+
 
 
 ### 3.5.1 Service Trust
@@ -628,7 +629,8 @@ in time window k, denoted _R**k(i,T)_. We calculate it in Equation 3.22.
 
 The normalized service trust _wst**k(i,j)_ used as weight is computed as:
 
-![Screenshot_20240404_013659](https://github.com/stratosphereips/fides/assets/41242896/aec6511c-a1d1-4454-a740-8063ad2feffb)
+![Screenshot_20240404_231557](https://github.com/stratosphereips/fides/assets/41242896/742a3e36-3c1f-46c5-b290-655d444270da)
+
 
 
 Equation 3.23 estimates the percentage that the service trust on j _st**k(i,j)_ has
