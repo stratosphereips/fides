@@ -15,6 +15,17 @@ Fides is a generic trust model fine-tuned for sharing security threat intelligen
 global peer-to-peer networks of intrusion prevention agents.
 We design and build Fides taking into account the problems and limitations of previous state-of-the-art trust models, optimizing them for a
 broad spectrum of peer-to-peer networks where peers can join and leave at any time.
+
+
+The direct contributions are the computational model of the trust model Fides, the reference implementation of the model in
+Python, the simulation framework for modeling peers' behavior in the network including the implementation of the framework and the
+implementation of the Fides module for reference intrusion prevention system.
+
+
+## How it works
+
+![Screenshot_20240423_171706](https://github.com/stratosphereips/fides/assets/41242896/94f645c7-e064-4ca4-9264-c66bb611a07b)
+
 Fides evaluates the behavior of peers in the network, including their membership in pre-trusted organizations, and uses this knowledge to
 compute the trust.
 Fides continually assesses received data from the peers, and by weighting and comparing them with each other as well as with the existing
@@ -25,16 +36,14 @@ controlled by malicious actors_ Fides is still able to
 provide the correct values of the threat intelligence data under the assumption that
 the other part of the network, the remaining 25%, are peers that are part of trusted organizations.
 
-The direct contributions are the computational model of the trust model Fides, the reference implementation of the model in
-Python, the simulation framework for modeling peers' behavior in the network including the implementation of the framework and the
-implementation of the Fides module for reference intrusion prevention system.
-
 ## Repository
 
 * [files](fides) is the implementation of the trust model
 * [simulations](simulations) are simulations used to evaluate the model
 * [slips](slips) is the Slips module that uses Fides
 * [tests](tests) are the unit tests that verify that Fides works
+* [trust model design](https://github.com/stratosphereips/fides/blob/master/doc/design.md) is the documentation of the design of fides trust model
+
 
 ## How to
 
