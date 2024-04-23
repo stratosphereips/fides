@@ -35,7 +35,6 @@ implementation of the Fides module for reference intrusion prevention system.
 * [simulations](simulations) are simulations used to evaluate the model
 * [slips](slips) is the Slips module that uses Fides
 * [tests](tests) are the unit tests that verify that Fides works
-* [thesis](thesis) is my master's thesis that describes the model and why was implemented
 
 ## How to
 
