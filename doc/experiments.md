@@ -8,7 +8,7 @@ intelligence.
 In the [Sampling Threat Intelligence](#sampling-threat-intelligence) section we describe how we sample threat intelligence shared by
 the peers. In the following [Peer’s Behavioral Patterns section](#peer’s-behavioral-patterns),
 we list different types of peers in
-the network, what is their goal, and how they behave. [Environment Simulation section](#environment-simulation-section) then
+the network, what is their goal, and how they behave. [Environment Simulation section](#environment-simulation) then
 describes how we designed the environment and what are the inputs for
 the simulation itself. The last [Experiments Evaluation section](#experiments-evaluation)
 presents how we evaluate each
@@ -90,7 +90,7 @@ score that is opposite of the baseline and with a high confidence value.
 The malicious peer is going to provide wrong threat intelligence inten-
 tionally to achieve their goal of influencing the trust decisions of the local
 peer. The sampling data are the same as for the confident incorrect 
-([Environment Simulation section](#environment-simulation-section)) behavior, 
+([Environment Simulation section](#environment-simulation)) behavior, 
 but the difference is that the malicious peer is providing
 misleading data intentionally. Moreover, intelligent malicious peer knows,
 that it their incentive is to gain the service trust at the beginning in order
