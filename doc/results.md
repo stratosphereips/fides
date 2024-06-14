@@ -29,6 +29,11 @@ does the outcome of a simulation looks like, such as the example shown in
 Figure 6.1. The simulation framework provides this graph for each possible
 simulation.
 
+![Screenshot_20240614_165722](https://github.com/stratosphereips/fides/assets/41242896/a99e194b-345c-4971-9627-440de9e0140a)
+
+![Screenshot_20240614_170607](https://github.com/stratosphereips/fides/assets/41242896/2388cb1d-5471-47b5-9b23-111d1c2a99c2)
+
+![Screenshot_20240614_170647](https://github.com/stratosphereips/fides/assets/41242896/4cd5e8eb-2023-49c6-bf4f-b6b09b7784ef)
 
 Figure 6.1: An example outcome from a single simulation. The graph on
 top shows how service trust changes as time goes by. In this example there
@@ -168,6 +173,9 @@ environment - tdp = 0. This suggests that the method was unable to de-
 termine any trust for any of the peers. This is then later confirmed by
 Figure 6.3.
 
+![Screenshot_20240614_170725](https://github.com/stratosphereips/fides/assets/41242896/150acd4c-13d6-4d0c-a64d-412acdb2770e)
+![Screenshot_20240614_170931](https://github.com/stratosphereips/fides/assets/41242896/2637cd16-85d2-45a8-bd06-fb6bb63f8fdb)
+![Screenshot_20240614_170954](https://github.com/stratosphereips/fides/assets/41242896/21d95b15-fdb5-41ba-b235-f78c2278e524)
 
 Figure 6.2: Target detection performance (vertical axis) for three different
 interaction evaluation strategies in different environments (horizontal axis)
@@ -198,6 +206,10 @@ unable to determine trust for the peers and has average peer’s trust close
 to 0. This means that the trust model will almost always aggregate threat
 intelligence to score 0 with confidence 0 making it, in a fact, useless.
 
+
+![Screenshot_20240614_171043](https://github.com/stratosphereips/fides/assets/41242896/0f55f608-06a9-435e-b6d8-ad28c360f3ae)
+
+![Screenshot_20240614_171122](https://github.com/stratosphereips/fides/assets/41242896/db394aee-875e-4b10-aae1-647ff14a8bdd)
 
 Figure 6.3: The behavior of peer’s trust metrics in the different environments
 for different Fides’s setups with no pre-trusted peers. On the left side
@@ -238,7 +250,10 @@ with the AverageConfidenceTIAggregation. In such case, Fides provides
 a guarantee that no matter what the adversaries do, it calculates the correct
 threat intelligence.
 
+![Screenshot_20240614_171209](https://github.com/stratosphereips/fides/assets/41242896/cb42f6ec-938f-4273-9fcf-7f68fbcf1307)
+![Screenshot_20240614_171258](https://github.com/stratosphereips/fides/assets/41242896/c17697fa-7183-4bb9-87fd-86376b4fff00)
 
+![Screenshot_20240614_171308](https://github.com/stratosphereips/fides/assets/41242896/5df437bc-d40f-4384-878d-786a0adde507)
 
 
 Figure 6.4: Target detection performance (vertical axis) for three different
@@ -258,7 +273,9 @@ The biggest improvement was in strategy DistanceBasedTIEvaluation
 which had poor performance with no pre-trusted peers in Figure 6.3. How-
 ever, in the situation with 25% pre-trusted peers it is now able to detect the
 true behavior of the peers with the similar precision as the other strategies.
+![Screenshot_20240614_171354](https://github.com/stratosphereips/fides/assets/41242896/acc8dce4-cabb-4d35-ae97-832808489ade)
 
+![Screenshot_20240614_171408](https://github.com/stratosphereips/fides/assets/41242896/6c7bc29b-2ca5-40ec-9cab-9277a775403f)
 
 Figure 6.5: The behavior of peer’s trust metrics in the different environments
 for different Fides’s setups with 25% pre-trusted peers. On the left side
@@ -281,6 +298,7 @@ as target score for the situation from Figure 6.6 can be seen in the appendix
 in the Figure A.3. This is also the same behavior that we described when
 we were describing Figure 6.3 in the previous the [Evaluation of Fides Resilience section](#evaluation-of-fides-resilience).
 
+![Screenshot_20240614_171517](https://github.com/stratosphereips/fides/assets/41242896/fdc6093d-fdc5-4aa2-8510-854ecd0de52a)
 
 Figure 6.6: DistanceBasedTIEvaluation in the situation from the fig-
 ure 6.1
@@ -293,6 +311,7 @@ score and confidence ended up being 0 as well.
 Another thing to consider is that during the simulations from the pre-
 vious the [Evaluation of Fides Resilience section](#evaluation-of-fides-resilience), the local Slips did not know anything about the targets.
 Which means that whenever Fides requested threat intelligence from Fides,
+
 
 
 it responded as uncertain peer ([the Peer’s Behavioral Patterns section](https://github.com/stratosphereips/fides/blob/master/doc/experiments.md#peer%E2%80%99s-behavioral-patterns)). This simulates situations that
@@ -316,7 +335,9 @@ particular ”winning” setup in the most hostile environment to the Appendix
 in Figure A.1. For the explanation of the graph see
 [the General Overview of a Single Simulation section](#general-overview-of-a-single-simulation').
 
+![Screenshot_20240614_171539](https://github.com/stratosphereips/fides/assets/41242896/0a32cbe5-bd9c-4314-a208-ab3308ed46e5)
 
+Figure 6.7: Score in figure A.2.
 
 Interestingly, in this particular case, the initial reputation does not affect
 the final outcome of the simulation, but it does affect the progress as when
