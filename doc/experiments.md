@@ -14,6 +14,7 @@ the simulation itself. The last [Experiments Evaluation section](#experiments-ev
 presents how we evaluate each
 scenario and explains the vital simulation indicators.
 
+
 ## Sampling Threat Intelligence
 Threat intelligence, which is being shared on the peer-to-peer network
 and is aggregated by Fides, is generated inside Slips by various modules.
@@ -68,6 +69,8 @@ confidence in the recommendation. This peer has the ideal behavior as its
 data are useful and correct. Table 5.1 describes the data used for sampling
 the threat intelligence this peer provides.
 
+![Screenshot_20240614_164959](https://github.com/stratosphereips/fides/assets/41242896/6fdefc69-3bb6-4380-8713-92906082f952)
+
 ### Uncertain Peer
 This behavior simulates peers that do not have enough information to
 provide reasonably good data, but they are benign and honest with their
@@ -75,6 +78,7 @@ behavior. The peer can provide essentially any score but with very low
 confidence in said score. That is why the μup
  s is quite high whereas the
 mean for this behavior is 0.
+![Screenshot_20240614_165056](https://github.com/stratosphereips/fides/assets/41242896/943e6bb7-c892-4ad3-a826-8a99c839390b)
 
 
 ### Confident Incorrect
@@ -85,6 +89,7 @@ that were not attacked by a malicious device and they consider it benign
 because they do not have any information indicating malicious intent. Thus,
 whenever the peer is asked to provide threat intelligence, it responds with a
 score that is opposite of the baseline and with a high confidence value.
+![Screenshot_20240614_165114](https://github.com/stratosphereips/fides/assets/41242896/2e41e7a5-cab4-43e0-b04b-a57067598c43)
 
 ### Malicious Peer
 The malicious peer is going to provide wrong threat intelligence inten-
@@ -111,6 +116,10 @@ it is not providing score {−1, 1} with the confidence of 1 all the time, but
 rather uses a distribution that is close to these values. The reason is that if
 the model sees that there is a peer that provides {−1, 1} with high confidence
 all the time, it would be very easy to detect and penalize this behavior.
+
+![Screenshot_20240614_165156](https://github.com/stratosphereips/fides/assets/41242896/da658fd9-82ad-43e7-9f9f-a8d116825977)
+
+
 
 ## Environment Simulation
 It is important in the simulations to also simulate time. This is because
@@ -189,6 +198,10 @@ aggregated score ([Network Intelligence Aggregation section](https://github.com/
 end of the simulation.
 
 
+![Screenshot_20240614_165344](https://github.com/stratosphereips/fides/assets/41242896/2e2617a3-c17b-4902-b568-e021c2357cc8)
+
+
+
 This metric provides information on how good Fides was in computing the
 score (malicious / benign) for some target. It holds that 0 ≤ tdp ≤ 2 where
 0 is the best detection and 2 is the worst detection. Moreover, if tdp ≤ 1
@@ -202,11 +215,14 @@ distance between computed service trust and the ground truth behavior of
 the peer in the simulation.
 
 
+![Screenshot_20240614_165323](https://github.com/stratosphereips/fides/assets/41242896/43263d11-c210-4bfd-833f-840b3c55a31b)
+
 P is the set of remote peers in the simulation, stkmax is the service trust
 i,jthat the local trust model (i ) had for the remote peer (j ) at the end of the
  ̄simulation. bj is then the ground truth behavior of the remote peer and we
 compute it in the Equation 5.3.
 
+![Screenshot_20240614_165406](https://github.com/stratosphereips/fides/assets/41242896/379ae1df-81fa-4c1c-92cc-04b52a44ae33)
 
 
 Recall the description of the peers’ behaviors from the [Peer’s Behavioral Patterns section](#peer’s-behavioral-patterns), where
@@ -228,6 +244,7 @@ provide correct threat intelligence and recommendations. On the contrary,
 the lower the eh is, the harder it is for Fides to operate as there are more
 byzantine peers.
 
+![Screenshot_20240614_165428](https://github.com/stratosphereips/fides/assets/41242896/840766d4-bf66-4c8c-a1e4-ea84887725dc)
 
 Where PCC is a set of peers in simulation that behave like a confident
 correct ([Peer’s Behavioral Patterns section](#peer’s-behavioral-patterns)) peer and PU P that behave like an uncertain peer
@@ -251,5 +268,5 @@ with focus on the evaluation of Fides’s resilience.
 
 ---
 
-Refer to the [Results document]() for the results of the above experiments.
+Refer to the [Results document](https://github.com/stratosphereips/fides/blob/master/doc/results.md) for the results of the above experiments.
 
