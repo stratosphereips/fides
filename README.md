@@ -61,3 +61,6 @@ See [fides.conf.yml](fides.conf.yml) that is used to parametrize the trust model
 * https://github.com/stratosphereips/p2p4slips-experiments
 * https://github.com/stratosphereips/p2p4slips-tester
 * https://github.com/draliii/StratosphereLinuxIPS/tree/module-p2p
+
+
+This project is now a submodule of [StratosphereLinuxIPS](https://github.com/stratosphereips/StratosphereLinuxIPS/)
